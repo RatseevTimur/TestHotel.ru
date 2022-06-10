@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Рацеев Тимур</h1>
+
+    <p>
+        <a href="https://krasnodar.hh.ru/resume/f63470dfff0992f6950039ed1f715535727352?hhtmFrom=resume_list">
+            Резюме на hh.ru</a>
+    </p>
+
+    <p>
+        <a href="https://github.com/RatseevTimur">
+            Резюме на GitHub</a>
+    </p>
+
+<input class="button" type="submit" id="task_1" value="Задача 1"/>
+    <div>
+        <textarea>
+            let сities = ["Москва", "Ростов-на-Дону", "Краснодар",
+            "Город зелёного цвета"]
+
+            function citiesString(сities) {
+            return сities.join(", ") + ".";
+            }
+        
+            alert(citiesString(сities));
+          </textarea>
+    </div>    
+
+    
+    <input class="button" type="submit" id="task_2" value="Задача 2"/>
+    <div>
+        <textarea>
+            let float = prompt('Давайте окргулим ваше число до кратного 5')
+
+            function multiple5() {
+                return Math.round(float/5)*5;
+            }
+        
+            alert(multiple5());
+        </textarea>
+    </div>
+
+    <div>
+        <input class="button" type="submit" id="task_3" value="Задача 3"/>
+        <textarea>
+            let int = prompt('Сколько компьютеров вам нужно?')
+
+            const selectionEndings = (n = 1) => [`ов`,`а`,``]
+            [+n === 1 ? 2 : Math.round(2 / ( + ('' + n).substr(-1) || 10)) * !(('' + n).substr(-2, 1) == 1)];
+        
+            alert("Хорошо, мы вышлем вам " + int + " компьютер" + selectionEndings(int));
+        </textarea>
+    </div>
+    </div>
+
+    <div>
+        <input class="button" type="submit" id="task_4" value="Задача 4"/>
+        <textarea>
+            let number = prompt('Проверим число на простоту');
+
+    let simplicity = "Простое";
+    for (let i = 2; i < number; i++) {
+        if (number % i == 0) {
+            simplicity = "Непростое";
+            break;
+        }
+    }
+    alert(simplicity);
+        </textarea>
+    </div>
+
+    <div>
+        <input class="button" type="submit" id="task_5" value="Задача 5"/>
+        <textarea>
+            let rawArray1 = [7, 17, 1, 9, 1, 17, 56, 56, 23]
+            let rawArray2 = [56, 17, 17, 1, 23, 34, 23, 1, 8, 1]
+            
+            let array1 = rawArray1.filter(function(item, pos) {
+                    return rawArray1.indexOf(item) !== pos;
+                })
+            let array2 = rawArray2.filter(function(item, pos) {
+                    return rawArray2.indexOf(item) !== pos;
+                })
+        
+            intersect = function(array1, array2) {
+                return array1.filter(function(n) {
+                return array2.indexOf(n) !== -1;
+                });
+            };
+        
+            alert( "Первый массив: [" + rawArray1 + "]")
+            alert( "Второй массив: [" + rawArray2 + "]")
+        
+            alert( "Результат: [ " + intersect(array1,array2) + "]")
+        </textarea>
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    document.getElementById('task_1').onclick = function (){task1()}
+
+    document.getElementById('task_2').onclick = function (){task2()}
+
+    document.getElementById('task_3').onclick = function (){task3()}
+
+    document.getElementById('task_4').onclick = function (){task4()}
+
+    document.getElementById('task_5').onclick = function (){task5()}
+
+</script>
+
+<style>
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+body {
+    background: linear-gradient(-45deg, #fffdfc, #fda8c9, #a3e7ff, #6bf3d3);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+textarea {
+    background: #fff7e5;
+    border: 1px solid #d8e3ff; 
+    padding: 10px; 
+    width: 100%; 
+    height: 200px; 
+    box-sizing: border-box; 
+    font-size: 14px; 
+}
+
+h1 {
+   text-transform: uppercase;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif
+}
+   
+a {
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   margin: 0px 5px;
+   padding: 10px 10px;
+   font-size: 15x;
+   font-weight: bold;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.button {
+    border:1px solid #ffecb0;
+    padding: 6px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-family: Verdana;
+    background: #FFF;
+    border-radius: 5px;
+</style>
+ 
